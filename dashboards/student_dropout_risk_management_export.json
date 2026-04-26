@@ -1,0 +1,18 @@
+{
+  "genie_space_id": "01f1360d33cf169390f4e4c2491439af",
+  "title": "Student Dropout Risk Management",
+  "exported_at": "2026-04-26T13:09:41.330542",
+  "export_version": "1.0",
+  "configuration": {
+    "space_id": "01f1360d33cf169390f4e4c2491439af",
+    "title": "Student Dropout Risk Management",
+    "warehouse_id": "10996163c7419994",
+    "parent_path": "/Users/saitwins777@gmail.com/HackBricks-databricks-usecase/dashboards"
+  },
+  "notes": {
+    "type": "Genie Space (Data Room)",
+    "description": "This is a Genie AI-powered data room for natural language queries about student dropout risk.",
+    "api_limitation": "The Genie Spaces API does not expose table associations, instructions, or sample questions via the standard endpoint. Only basic metadata is available.",
+    "reconstruction": "To recreate this space, you'll need to manually add the same tables and configure instructions in the Genie UI."
+  }
+}

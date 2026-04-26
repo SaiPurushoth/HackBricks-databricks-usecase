@@ -1,0 +1,120 @@
+{
+  "dashboard_id": "01f135fd658317f686dfd3b8e99d930b",
+  "display_name": "Student Retention Dashboard",
+  "exported_at": "2026-04-26T13:07:03.021453",
+  "export_version": "1.0",
+  "source": "published",
+  "metadata": {
+    "datasets_count": 1,
+    "pages_count": 1,
+    "total_widgets": 11
+  },
+  "datasets": [
+    {
+      "name": "dashboards/01f135fd658317f686dfd3b8e99d930b/datasets/01f135fdc1301b749d664027da152e78",
+      "display_name": "Student Intervention Data",
+      "catalog": "workspace",
+      "schema": "dropout_gold",
+      "query": "SELECT\n  *\nFROM\n  workspace.dropout_gold.student_intervention_queue",
+      "tables": [
+        "workspace.dropout_gold.student_intervention_queue"
+      ],
+      "cte_expressions": []
+    }
+  ],
+  "pages": [
+    {
+      "name": "dashboards/01f135fd658317f686dfd3b8e99d930b/pages/01f135fd658516a99017d7ebeafa39cb",
+      "display_name": "Page 1",
+      "widgets": [
+        {
+          "name": "dashboards/01f135fd658317f686dfd3b8e99d930b/pages/01f135fd658516a99017d7ebeafa39cb/widgets/b625b5a6521f4e44ad87aeefec29906b",
+          "title": "Students Needing Support",
+          "widget_type": "VIZ",
+          "dataset_names": [
+            "dashboards/01f135fd658317f686dfd3b8e99d930b/datasets/01f135fdc1301b749d664027da152e78"
+          ]
+        },
+        {
+          "name": "dashboards/01f135fd658317f686dfd3b8e99d930b/pages/01f135fd658516a99017d7ebeafa39cb/widgets/fec9c7a0bafe4745bb9df9e068841332",
+          "title": "Cases for Manual Review",
+          "widget_type": "VIZ",
+          "dataset_names": [
+            "dashboards/01f135fd658317f686dfd3b8e99d930b/datasets/01f135fdc1301b749d664027da152e78"
+          ]
+        },
+        {
+          "name": "dashboards/01f135fd658317f686dfd3b8e99d930b/pages/01f135fd658516a99017d7ebeafa39cb/widgets/11b4712faca64e7fa3885f6fa849e654",
+          "title": "Students by Intervention Tier",
+          "widget_type": "VIZ",
+          "dataset_names": [
+            "dashboards/01f135fd658317f686dfd3b8e99d930b/datasets/01f135fdc1301b749d664027da152e78"
+          ]
+        },
+        {
+          "name": "dashboards/01f135fd658317f686dfd3b8e99d930b/pages/01f135fd658516a99017d7ebeafa39cb/widgets/2de89e30e434435a9d84485d69d7b078",
+          "title": "Recommended Actions Breakdown",
+          "widget_type": "VIZ",
+          "dataset_names": [
+            "dashboards/01f135fd658317f686dfd3b8e99d930b/datasets/01f135fdc1301b749d664027da152e78"
+          ]
+        },
+        {
+          "name": "dashboards/01f135fd658317f686dfd3b8e99d930b/pages/01f135fd658516a99017d7ebeafa39cb/widgets/116d2fa2a1b84824a54830b073102a65",
+          "title": "Top 20 Priority Students",
+          "widget_type": "VIZ",
+          "dataset_names": [
+            "dashboards/01f135fd658317f686dfd3b8e99d930b/datasets/01f135fdc1301b749d664027da152e78"
+          ]
+        },
+        {
+          "name": "dashboards/01f135fd658317f686dfd3b8e99d930b/pages/01f135fd658516a99017d7ebeafa39cb/widgets/5e02b94273a1493db35e56c0b49e5aea",
+          "title": "Most Common Risk Factors (All Students)",
+          "widget_type": "VIZ",
+          "dataset_names": [
+            "dashboards/01f135fd658317f686dfd3b8e99d930b/datasets/01f135fdc1301b749d664027da152e78"
+          ]
+        },
+        {
+          "name": "dashboards/01f135fd658317f686dfd3b8e99d930b/pages/01f135fd658516a99017d7ebeafa39cb/widgets/48ecb4b17d274b4a8d1f7fc3dbc79cba",
+          "title": "Risk Factors by Intervention Tier",
+          "widget_type": "VIZ",
+          "dataset_names": [
+            "dashboards/01f135fd658317f686dfd3b8e99d930b/datasets/01f135fdc1301b749d664027da152e78"
+          ]
+        },
+        {
+          "name": "dashboards/01f135fd658317f686dfd3b8e99d930b/pages/01f135fd658516a99017d7ebeafa39cb/widgets/d8b38b2d827e40118fa9f89cb949e167",
+          "title": "Section Header",
+          "widget_type": "text",
+          "dataset_names": []
+        },
+        {
+          "name": "dashboards/01f135fd658317f686dfd3b8e99d930b/pages/01f135fd658516a99017d7ebeafa39cb/widgets/3f544aed58264220a79bc69e35c95d67",
+          "title": "Action Plan Header",
+          "widget_type": "text",
+          "dataset_names": []
+        },
+        {
+          "name": "dashboards/01f135fd658317f686dfd3b8e99d30b/pages/01f135fd658516a99017d7ebeafa39cb/widgets/cf3e660cd9de4645a16c9a03c9f46778",
+          "title": "Root Causes Header",
+          "widget_type": "text",
+          "dataset_names": []
+        },
+        {
+          "name": "dashboards/01f135fd658317f686dfd3b8e99d930b/pages/01f135fd658516a99017d7ebeafa39cb/widgets/a9f26ad9e43b475aa9c050e772b71f36",
+          "title": "Resources Needed by Action Type",
+          "widget_type": "VIZ",
+          "dataset_names": [
+            "dashboards/01f135fd658317f686dfd3b8e99d930b/datasets/01f135fdc1301b749d664027da152e78"
+          ]
+        }
+      ]
+    }
+  ],
+  "reconstruction_notes": {
+    "note": "This export captures the dashboard structure, dataset queries, and widget configuration.",
+    "limitations": "Widget-specific visualization settings (chart types, colors, axes) are not included in this export.",
+    "usage": "This file can be version controlled in git. To recreate the dashboard, you'll need to manually recreate widgets using the dataset query provided."
+  }
+}
