@@ -1,134 +1,121 @@
 # 🎓 Student Dropout Risk Prediction System
 
-[![HackBricks](https://img.shields.io/badge/HackBricks-First%20Runner--Up-orange?style=for-the-badge)](https://www.databricks.com/)
-[![Databricks](https://img.shields.io/badge/Databricks-Powered-red?style=for-the-badge\&logo=databricks)](https://www.databricks.com/)
-[![Python](https://img.shields.io/badge/Python-3.9+-blue?style=for-the-badge\&logo=python)](https://www.python.org/)
+<p align="center">
+  <img src="./docs/architecture_diagram.png" alt="Architecture" width="90%">
+</p>
 
-> 🏆 **First Runner-Up at HackBricks** – A Databricks-focused Hackathon
+<p align="center">
+  <img src="https://img.shields.io/badge/HackBricks-First%20Runner--Up-orange?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Databricks-Powered-red?style=for-the-badge&logo=databricks"/>
+  <img src="https://img.shields.io/badge/Python-3.9+-blue?style=for-the-badge&logo=python"/>
+</p>
 
-An end-to-end ML solution built on Databricks for predicting student dropout risk and enabling proactive intervention strategies.
-
----
-
-## 📋 Table of Contents
-
-* Overview
-* Architecture
-* Key Features
-* Technical Stack
-* Project Structure
-* Workflow Pipeline
-* Setup & Installation
-* Results & Outputs
-* Future Enhancements
-* Acknowledgments
+<p align="center">
+  <b>🏆 First Runner-Up at HackBricks 2026</b><br>
+  End-to-End ML system for predicting student dropout risk and enabling proactive interventions
+</p>
 
 ---
 
-## 🎯 Overview
+## 🚀 Why This Project Matters
 
-Student dropout is a critical challenge in educational institutions. This solution leverages:
+Student dropout is not just a data problem — it's a **decision problem**.
 
-* Machine Learning
-* Delta Lake
-* MLflow
-* Databricks
-
-### What this system does:
-
-* Predict at-risk students
-* Identify contributing factors
-* Recommend interventions
-* Monitor fairness
-* Automate alerts & dashboards
+Most institutions react *after* students disengage.
+This system enables **proactive, explainable, and scalable intervention strategies** using modern data engineering + ML practices on Databricks.
 
 ---
 
-## 🏗️ Architecture
+## 🧠 What This System Does
 
-> ⚠️ Make sure images exist in `/docs` folder in your repo
+✔ Predicts at-risk students
+✔ Identifies *why* they are at risk
+✔ Recommends targeted interventions
+✔ Ensures fairness & bias monitoring
+✔ Automates alerts + dashboards
 
-![Architecture Diagram](./docs/architecture_diagram.png)
+---
 
-### Pipeline Flow
+## 🏗️ Architecture Overview
 
-```
-Student Dataset
-    ↓
-🥉 Bronze Layer (Raw Data)
-    ↓
-🥈 Silver Layer (Clean Views)
-    ↓
-🧠 Feature Table
-    ↓
-🤖 ML Models
-    ↓
-✅ Model Selection + Explainability
-    ↓
-🎯 Final Output (Risk + Action)
+<p align="center">
+  <img src="./docs/architecture_diagram.png" width="95%">
+</p>
+
+### 🔄 Pipeline Flow
+
+```text
+Raw Student Data
+   ↓
+🥉 Bronze (Raw Ingestion)
+   ↓
+🥈 Silver (Cleaned Views)
+   ↓
+🧠 Feature Engineering
+   ↓
+🤖 ML Models (RF + LR)
+   ↓
+🔍 Explainability (SHAP)
+   ↓
+⚖️ Fairness Audit
+   ↓
+🎯 Gold Layer (Intervention Output)
+   ↓
+📊 Dashboards + Alerts
 ```
 
 ---
 
-## ✨ Key Features
+## ⚡ Key Highlights
 
-### 🚀 End-to-End ML Pipeline
+### 🧩 End-to-End Data + ML Pipeline
 
-* Automated ingestion
-* Feature engineering
-* MLflow tracking
-* Model comparison
+* Medallion architecture (Bronze → Silver → Gold)
+* Delta Lake + Spark processing
+* Fully orchestrated workflow
 
-### 🔍 Explainable AI
+### 🔍 Explainable AI (Not Black Box)
 
-* SHAP values per prediction
-* Top 3 risk factors
-* Interpretable scores
+* SHAP-based explanations
+* Top 3 risk drivers per student
+* Transparent decision support
 
-### ⚖️ Fairness & Ethics
+### ⚖️ Responsible AI
 
-* Bias detection
-* Demographic audits
-* Responsible AI reporting
+* Bias detection across demographics
+* Fairness audits baked into pipeline
 
-### 📊 Actionable Insights
+### 🎯 Action-Oriented Output
 
-* Risk tiers (Low/Medium/High)
-* Recommended actions
-* Priority ranking
+* Risk score (0–1)
+* Intervention tier (Low/Medium/High)
+* Recommended action per student
 
-### 📡 Real-Time Monitoring
+### 📡 Real-Time Observability
 
 * Lakeview dashboards
-* Email alerts
-* Natural language queries (Genie)
-
-### 🏭 Production Ready
-
-* Delta Lake ACID
-* Unity Catalog governance
-* Scalable Spark pipelines
+* Automated email alerts
+* Natural language analytics (Genie)
 
 ---
 
-## 🛠️ Technical Stack
+## 🛠️ Tech Stack
 
-| Component      | Technology           |
-| -------------- | -------------------- |
-| Platform       | Databricks           |
-| Storage        | Delta Lake           |
-| Processing     | Apache Spark         |
-| ML             | scikit-learn, MLflow |
-| Explainability | SHAP                 |
-| Visualization  | Lakeview, Plotly     |
-| Orchestration  | Databricks Workflows |
-| Language       | Python 3.9+          |
+| Layer          | Technology                 |
+| -------------- | -------------------------- |
+| Platform       | Databricks (Unity Catalog) |
+| Storage        | Delta Lake                 |
+| Processing     | Apache Spark (PySpark)     |
+| ML             | scikit-learn + MLflow      |
+| Explainability | SHAP                       |
+| Visualization  | Lakeview + Plotly          |
+| Orchestration  | Databricks Workflows       |
 
 ---
 
 ## 📁 Project Structure
 
-```
+```text
 HackBricks-databricks-usecase/
 │
 ├── dropout-students-usecase-workflow/
@@ -146,31 +133,33 @@ HackBricks-databricks-usecase/
 │   └── 99_full_pipeline_driver.ipynb
 │
 ├── dashboards/
-├── docs/
+├── docs/   ← (All images here)
 └── sample-scripts/
 ```
 
 ---
 
-## 🔄 Workflow Pipeline
+## 🔄 Workflow Deep Dive
 
-### 🥉 Bronze
+### 🥉 Bronze Layer
 
 * Raw ingestion into Delta tables
+* Minimal transformation
 
-### 🥈 Silver
+### 🥈 Silver Layer
 
-* Cleaned business views:
+* Cleaned, business-ready datasets
+* Domain modeling:
 
-  * student_profile
-  * financial_status
-  * academic_performance
+  * Student Profile
+  * Financial Status
+  * Academic Performance
 
 ### 🧠 Feature Engineering
 
 * Academic trends
-* Financial indicators
-* Engagement metrics
+* Financial stress indicators
+* Engagement signals
 
 ### 🤖 Model Training
 
@@ -178,95 +167,101 @@ HackBricks-databricks-usecase/
 * Random Forest
 * MLflow tracking
 
-### 📊 Evaluation
+---
 
-* Fairness audit
-* SHAP explanations
+## 📊 Results & Insights
 
-### 🥇 Gold Layer
+<p align="center">
+  <img src="./docs/dashboard_screenshot.png" width="90%">
+</p>
 
-* Final intervention table
-* Risk scores + recommendations
+### 📈 Key Metrics
 
-### 📡 Monitoring
-
-* Dashboards
-* Email alerts
+* 🎯 294 high-risk students
+* 📊 885 flagged for review
+* ✅ 61% low-risk population
+* ⚠️ 25% high-risk requiring intervention
 
 ---
 
-## 🚀 Setup & Installation
+## 🚨 Real-Time Alerting
+
+<p align="center">
+  <img src="./docs/email_alert_screenshot.png" width="75%">
+</p>
+
+Each alert includes:
+
+* Risk score
+* Top contributing factors
+* Recommended action
+
+---
+
+## 📡 Pipeline Monitoring
+
+<p align="center">
+  <img src="./docs/pipeline_screenshot.png" width="90%">
+</p>
+
+✔ All pipeline stages automated
+✔ Fully traceable and reproducible
+
+---
+
+## 📊 Model Performance
+
+| Model               | AUC  | F1 Score | Precision | Recall |
+| ------------------- | ---- | -------- | --------- | ------ |
+| Random Forest       | 0.89 | 0.84     | 0.82      | 0.87   |
+| Logistic Regression | 0.85 | 0.79     | 0.81      | 0.78   |
+
+🏆 **Selected Model: Random Forest** (better recall for risk detection)
+
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
-* Databricks workspace
+* Databricks Workspace
 * DBR 14.3+
 * Python 3.9+
 
-### Steps
-
-1. Import repo into Databricks
-2. Configure catalog in `00_shared_config.ipynb`
-3. Upload dataset
-4. Run:
+### Run Full Pipeline
 
 ```python
 %run ./99_full_pipeline_driver
 ```
 
-5. (Optional) Configure email alerts
-
 ---
 
-## 📊 Results & Outputs
+## 🔮 Future Roadmap
 
-![Dashboard](./docs/dashboard_screenshot.png)
-
-### Key Metrics
-
-* 294 high-risk students
-* 885 review cases
-* 61% low-risk population
-
-### Model Performance
-
-| Model               | AUC  | F1   |
-| ------------------- | ---- | ---- |
-| Random Forest       | 0.89 | 0.84 |
-| Logistic Regression | 0.85 | 0.79 |
-
----
-
-## 🔮 Future Enhancements
-
-* Real-time streaming
-* Advanced ML models (XGBoost)
-* Time-series predictions
-* A/B testing
-* Mobile dashboards
-* LLM-based reports
+* Real-time streaming ingestion
+* Advanced models (XGBoost, LGBM)
+* Time-series risk prediction
+* A/B testing interventions
+* LLM-based recommendation summaries
 
 ---
 
 ## 🙏 Acknowledgments
 
-* HackBricks organizers
-* Databricks community
-* Team members
+* HackBricks Team
+* Databricks Community
+* Contributors & Mentors
 
 ---
 
-## 📧 Contact
+## 📬 Contact
 
 * GitHub: https://github.com/SaiPurushoth
 * LinkedIn: https://www.linkedin.com/in/sai-purushoth-0642871b7/
 
 ---
 
-<div align="center">
-
-**Built with ❤️ on Databricks**
-
-🏆 HackBricks First Runner-Up
-
-</div>
+<p align="center">
+  <b>Built with ❤️ on Databricks</b><br>
+  🏆 HackBricks First Runner-Up
+</p>
